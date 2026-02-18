@@ -11,6 +11,13 @@ body {
 @supports (-webkit-touch-callout: none) {
   body {
     background-attachment: scroll;
+    background-position: center 60%; /* push down to show equipment, not ceiling */
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-position: center 60%; /* show equipment zone, not ceiling */
   }
 }
 
