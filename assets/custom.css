@@ -1,24 +1,21 @@
-/* Full-page background image - behind everything including navbar */
+/* Background via pseudo-element for full position control */
 body {
+  background-color: #0a0a0a;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: url('../images/hero-studio-floor.jpg');
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: center 55%;
   background-repeat: no-repeat;
-}
-
-/* iOS fix: background-attachment: fixed is broken on iOS Safari */
-@supports (-webkit-touch-callout: none) {
-  body {
-    background-attachment: scroll;
-    background-position: center 60%; /* push down to show equipment, not ceiling */
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    background-position: center 60%; /* show equipment zone, not ceiling */
-  }
+  z-index: -2;
+  pointer-events: none;
 }
 
 body::before {
@@ -31,6 +28,14 @@ body::before {
   background: rgba(10, 10, 10, 0.65);
   z-index: -1;
   pointer-events: none;
+}
+
+/* Mobile: position image to show equipment zone not ceiling */
+@media (max-width: 768px) {
+  body::after {
+    background-position: 35% 55%;
+    background-attachment: scroll;
+  }
 }
 
 /* Make sure content sits above the overlay */
