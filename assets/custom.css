@@ -7,6 +7,13 @@ body {
   background-repeat: no-repeat;
 }
 
+/* iOS fix: background-attachment: fixed is broken on iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
 body::before {
   content: '';
   position: fixed;
@@ -31,4 +38,172 @@ body::before {
 
 .hero-bg {
   display: none;
+}
+
+/* ============================================
+   MOBILE FIXES
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Hero: tighten up vertical space */
+  .hero {
+    min-height: 100svh; /* use svh for mobile browsers with address bar */
+    padding-top: calc(var(--nav-height) + 1rem);
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    padding: 2rem 0 6rem;
+  }
+
+  /* Hero title: don't let it run too large */
+  .hero-title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    margin-bottom: 1.25rem;
+  }
+
+  /* Hero sub: remove forced line break on small screens */
+  .hero-sub br {
+    display: none;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Hero CTAs: stack on very small screens */
+  .hero-ctas {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  /* Hero scroll indicator: hide on mobile (it overlaps content) */
+  .hero-scroll {
+    display: none;
+  }
+
+  /* Section spacing: reduce on mobile */
+  .section {
+    padding: clamp(3rem, 10vw, 5rem) 0;
+  }
+
+  /* Section title: slightly smaller */
+  .section-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Section header: tighter margin */
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  /* Large text: readable on mobile */
+  .large-text {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Split layout: stack properly with less gap */
+  .split {
+    gap: 2.5rem;
+  }
+
+  /* Services grid: single column, smaller padding */
+  .services-grid {
+    gap: 1px;
+  }
+
+  .service-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .service-arrow {
+    top: 2rem;
+    right: 1.5rem;
+  }
+
+  /* Audience grid: stack, less gap */
+  .audience-grid {
+    gap: 2.5rem;
+  }
+
+  /* Testimonials: stack single column */
+  .testimonial {
+    padding: 1.75rem;
+  }
+
+  /* Video grid: single column on mobile */
+  .video-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  /* CTA section */
+  .cta-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .cta-text {
+    font-size: 1rem;
+  }
+
+  /* Footer: already stacks, just tighten */
+  .footer {
+    padding: 3rem 0 2rem;
+  }
+
+  .footer-grid {
+    gap: 2rem;
+  }
+
+  /* Buttons: easier to tap */
+  .btn {
+    padding: 1.1rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  /* Nav inner padding */
+  .nav-inner {
+    padding: 0 1.25rem;
+  }
+
+  /* Mobile menu links: slightly smaller so they fit */
+  .mobile-link {
+    font-size: clamp(1.75rem, 10vw, 3rem);
+    margin-bottom: 0.75rem;
+  }
+
+  /* Page header on inner pages */
+  .page-header {
+    padding-top: calc(var(--nav-height) + 3rem);
+    padding-bottom: 2.5rem;
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+}
+
+/* Very small phones (< 390px) */
+@media (max-width: 390px) {
+  .hero-title {
+    font-size: clamp(2rem, 13vw, 3rem);
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .service-card {
+    padding: 1.5rem 1.25rem;
+  }
 }
