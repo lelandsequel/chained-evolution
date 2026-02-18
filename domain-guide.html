@@ -181,6 +181,7 @@
     <a class="registrar-btn" onclick="show('godaddy')">GoDaddy <span class="arrow">→</span></a>
     <a class="registrar-btn" onclick="show('namecheap')">Namecheap <span class="arrow">→</span></a>
     <a class="registrar-btn" onclick="show('google')">Google Domains or Squarespace <span class="arrow">→</span></a>
+    <a class="registrar-btn" onclick="show('wordpress')">WordPress.com <span class="arrow">→</span></a>
     <a class="registrar-btn" onclick="show('notsure')">I'm not sure <span class="arrow">→</span></a>
   </div>
 
@@ -226,6 +227,23 @@
     <div class="step"><div class="step-num">4</div><div class="step-text">Scroll down to <strong>"Custom Records"</strong></div></div>
     <div class="step"><div class="step-num">5</div><div class="step-text">Find the <strong>A</strong> record with host <strong>@</strong> → click edit → change value to <span class="code">76.76.21.21</span> → save</div></div>
     <div class="step"><div class="step-num">6</div><div class="step-text">Find the <strong>CNAME</strong> record with host <strong>www</strong> → click edit → change value to <span class="code">cname.vercel-dns.com</span> → save</div></div>
+
+    <div class="done-step">✅ <strong>You're done!</strong> Text Leland and let him know — he'll finish it on his end within a few minutes.</div>
+  </div>
+
+  <!-- WordPress -->
+  <div class="guide-section" id="wordpress">
+    <button class="back-btn" onclick="back()">← Back</button>
+    <h2>WordPress.com</h2>
+
+    <div class="step"><div class="step-num">1</div><div class="step-text">Go to <strong>wordpress.com</strong> and log in</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">Click your profile icon in the top right → click <strong>"Upgrades"</strong> then <strong>"Domains"</strong></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">Find <strong>chainedevolution.com</strong> in the list → click on it</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text">Click <strong>"DNS Records"</strong> in the left menu</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-text">Look for any existing <strong>A</strong> record with name <strong>@</strong> — if there is one, click the trash icon to delete it first</div></div>
+    <div class="step"><div class="step-num">6</div><div class="step-text">Click <strong>"Add DNS Record"</strong> → set Type to <strong>A</strong>, Name to <strong>@</strong>, Value to <span class="code">76.76.21.21</span> → click <strong>Add</strong></div></div>
+    <div class="step"><div class="step-num">7</div><div class="step-text">Look for any existing <strong>CNAME</strong> record with name <strong>www</strong> — delete it if there is one</div></div>
+    <div class="step"><div class="step-num">8</div><div class="step-text">Click <strong>"Add DNS Record"</strong> again → set Type to <strong>CNAME</strong>, Name to <strong>www</strong>, Value to <span class="code">cname.vercel-dns.com</span> → click <strong>Add</strong></div></div>
 
     <div class="done-step">✅ <strong>You're done!</strong> Text Leland and let him know — he'll finish it on his end within a few minutes.</div>
   </div>
