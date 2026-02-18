@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domain Setup Guide — chainedevolution.com</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f0f0f;
+      color: #f0f0f0;
+      line-height: 1.7;
+      padding: 1.5rem 1.25rem 4rem;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: #888;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Where did you buy it */
+    .registrar-picker {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .registrar-picker h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #c9a962;
+      margin-bottom: 1rem;
+    }
+
+    .registrar-btn {
+      display: block;
+      width: 100%;
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.6rem;
+      background: #252525;
+      border: 1px solid #333;
+      border-radius: 8px;
+      color: #f0f0f0;
+      font-size: 1rem;
+      text-align: left;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .registrar-btn:last-child { margin-bottom: 0; }
+    .registrar-btn:hover, .registrar-btn:active { background: #2e2e2e; }
+    .registrar-btn .arrow { float: right; color: #555; }
+
+    /* Sections */
+    .guide-section {
+      display: none;
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 1.5rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .guide-section.active { display: block; }
+
+    .guide-section h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #c9a962;
+      margin-bottom: 1.25rem;
+    }
+
+    .step {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: #c9a962;
+      color: #000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .step-text {
+      font-size: 0.975rem;
+      color: #ddd;
+      padding-top: 3px;
+    }
+
+    .step-text strong { color: #fff; }
+
+    .code {
+      display: inline-block;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      color: #c9a962;
+      word-break: break-all;
+    }
+
+    .done-step {
+      background: #1a2a1a;
+      border: 1px solid #2a4a2a;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: #7ec87e;
+    }
+
+    .done-step strong { color: #a0e0a0; }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 1.25rem;
+      color: #888;
+      font-size: 0.9rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      text-decoration: underline;
+    }
+
+    /* What happens after */
+    .info-box {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    .info-box h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .info-box p { margin-bottom: 0.5rem; }
+    .info-box p:last-child { margin-bottom: 0; }
+    .info-box .highlight { color: #c9a962; }
+  </style>
+</head>
+<body>
+
+  <h1>Connect chainedevolution.com</h1>
+  <p class="subtitle">Follow the steps for where you bought the domain. Takes 5 minutes.</p>
+
+  <!-- Picker -->
+  <div class="registrar-picker" id="picker">
+    <h2>Where did you buy the domain?</h2>
+    <a class="registrar-btn" onclick="show('godaddy')">GoDaddy <span class="arrow">→</span></a>
+    <a class="registrar-btn" onclick="show('namecheap')">Namecheap <span class="arrow">→</span></a>
+    <a class="registrar-btn" onclick="show('google')">Google Domains or Squarespace <span class="arrow">→</span></a>
+    <a class="registrar-btn" onclick="show('notsure')">I'm not sure <span class="arrow">→</span></a>
+  </div>
+
+  <!-- GoDaddy -->
+  <div class="guide-section" id="godaddy">
+    <button class="back-btn" onclick="back()">← Back</button>
+    <h2>GoDaddy</h2>
+
+    <div class="step"><div class="step-num">1</div><div class="step-text">Go to <strong>godaddy.com</strong> and log in</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">Click your name in the top right → tap <strong>"My Products"</strong></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">Find <strong>chainedevolution.com</strong> in the list → tap <strong>"DNS"</strong> next to it</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text">In the table, find the row where <strong>Type = A</strong> and <strong>Name = @</strong> → tap the pencil icon to edit it</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-text">Change the <strong>Value</strong> to: <span class="code">76.76.21.21</span> → tap <strong>Save</strong></div></div>
+    <div class="step"><div class="step-num">6</div><div class="step-text">Find the row where <strong>Type = CNAME</strong> and <strong>Name = www</strong> → tap the pencil to edit it</div></div>
+    <div class="step"><div class="step-num">7</div><div class="step-text">Change the <strong>Value</strong> to: <span class="code">cname.vercel-dns.com</span> → tap <strong>Save</strong></div></div>
+
+    <div class="done-step">✅ <strong>You're done!</strong> Text Leland and let him know — he'll finish it on his end within a few minutes.</div>
+  </div>
+
+  <!-- Namecheap -->
+  <div class="guide-section" id="namecheap">
+    <button class="back-btn" onclick="back()">← Back</button>
+    <h2>Namecheap</h2>
+
+    <div class="step"><div class="step-num">1</div><div class="step-text">Go to <strong>namecheap.com</strong> and log in</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">Click <strong>"Domain List"</strong> in the left sidebar</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">Find <strong>chainedevolution.com</strong> → click <strong>"Manage"</strong></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text">Click the <strong>"Advanced DNS"</strong> tab at the top</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-text">Find the row with <strong>Type: A Record</strong> and <strong>Host: @</strong> → click the edit icon → change Value to <span class="code">76.76.21.21</span> → save</div></div>
+    <div class="step"><div class="step-num">6</div><div class="step-text">Find the row with <strong>Type: CNAME</strong> and <strong>Host: www</strong> → click edit → change Value to <span class="code">cname.vercel-dns.com</span> → save</div></div>
+
+    <div class="done-step">✅ <strong>You're done!</strong> Text Leland and let him know — he'll finish it on his end within a few minutes.</div>
+  </div>
+
+  <!-- Google / Squarespace -->
+  <div class="guide-section" id="google">
+    <button class="back-btn" onclick="back()">← Back</button>
+    <h2>Google Domains / Squarespace</h2>
+
+    <div class="step"><div class="step-num">1</div><div class="step-text">Go to <strong>domains.google.com</strong> (or <strong>squarespace.com → Domains</strong>) and log in</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">Click on <strong>chainedevolution.com</strong></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">Click <strong>"DNS"</strong> in the left menu</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text">Scroll down to <strong>"Custom Records"</strong></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-text">Find the <strong>A</strong> record with host <strong>@</strong> → click edit → change value to <span class="code">76.76.21.21</span> → save</div></div>
+    <div class="step"><div class="step-num">6</div><div class="step-text">Find the <strong>CNAME</strong> record with host <strong>www</strong> → click edit → change value to <span class="code">cname.vercel-dns.com</span> → save</div></div>
+
+    <div class="done-step">✅ <strong>You're done!</strong> Text Leland and let him know — he'll finish it on his end within a few minutes.</div>
+  </div>
+
+  <!-- Not Sure -->
+  <div class="guide-section" id="notsure">
+    <button class="back-btn" onclick="back()">← Back</button>
+    <h2>Not Sure?</h2>
+
+    <div class="step"><div class="step-num">1</div><div class="step-text">Go to <strong>whois.domaintools.com</strong> on your phone</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">Type in <span class="code">chainedevolution.com</span> and search</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">Look for a line that says <strong>"Registrar"</strong> — that's where it was bought</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text">Log into that site and look for <strong>DNS settings</strong> — you're looking for an <strong>A record</strong> and a <strong>CNAME record</strong></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-text">Still confused? <strong>Screenshot whatever you're looking at and send it to Leland.</strong> He'll tell you exactly what to tap.</div></div>
+  </div>
+
+  <!-- What happens after -->
+  <div class="info-box">
+    <h3>What happens after?</h3>
+    <p>Once Leland gets your text, he'll hook it up on his end. Takes him 2 minutes.</p>
+    <p>The site usually goes live within <span class="highlight">30–60 minutes</span>. Sometimes up to 24 hours — that's normal.</p>
+    <p>Your old site stays up the whole time. Nothing breaks during the switch.</p>
+  </div>
+
+  <script>
+    function show(id) {
+      document.getElementById('picker').style.display = 'none';
+      document.getElementById(id).classList.add('active');
+    }
+    function back() {
+      document.querySelectorAll('.guide-section').forEach(s => s.classList.remove('active'));
+      document.getElementById('picker').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
