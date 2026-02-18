@@ -332,14 +332,15 @@
         </h2>
       </div>
       <div class="video-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
-        <div class="video-placeholder reveal-up" style="aspect-ratio: 16/9; background: rgba(255,255,255,0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1);">
-          <span style="color: rgba(255,255,255,0.4);">Training Session Video</span>
+        <div class="reveal-up" style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+          <video controls style="width: 100%; display: block; background: #000;">
+            <source src="/assets/videos/training.mov" type="video/mp4">
+          </video>
         </div>
-        <div class="video-placeholder reveal-up" style="aspect-ratio: 16/9; background: rgba(255,255,255,0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1);">
-          <span style="color: rgba(255,255,255,0.4);">InBody/Fit3D Demo</span>
-        </div>
-        <div class="video-placeholder reveal-up" style="aspect-ratio: 16/9; background: rgba(255,255,255,0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1);">
-          <span style="color: rgba(255,255,255,0.4);">Group Class Highlights</span>
+        <div class="reveal-up" style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+          <video controls style="width: 100%; display: block; background: #000;">
+            <source src="/assets/videos/scan.mov" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
